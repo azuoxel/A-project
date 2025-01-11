@@ -2,6 +2,8 @@ import pygame
 import time
 import random
 
+# 这是一个从本地ollama 大模型中获取的贪吃蛇游戏代码
+
 # 初始化pygame
 pygame.init()
 
