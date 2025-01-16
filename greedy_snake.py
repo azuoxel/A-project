@@ -2,8 +2,6 @@ import pygame
 import time
 import random
 
-# 这是一个从本地ollama 大模型中获取的贪吃蛇游戏代码
-
 # 初始化pygame
 pygame.init()
 
@@ -35,7 +33,7 @@ def our_snake(snake_block, snake_list):
 
 def message(msg, color):
     mesg = font_style.render(msg, True, color)
-    dis.blit(meg, [width / 6, height / 3])
+    dis.blit(mesg, [width / 6, height / 3])
 
 
 def gameLoop():
@@ -67,7 +65,9 @@ def gameLoop():
                         game_over = True
                         game_close = False
                     if event.key == pygame.K_c:
-                        gameLoop()
+                        # 重置游戏变量来重新开始游戏，而不是递归调用 gameLoop
+                        gameLoop()  
+                        return  # 必须在递归调用后立即返回，避免继续执行下面的代码
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
